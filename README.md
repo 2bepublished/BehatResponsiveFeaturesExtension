@@ -74,7 +74,7 @@ Features
 Limitations
 -----------
 
-- Only width filtering is currently allowd
+- Only width filtering is currently allowed
 - Features that should execute on all configurations need the `@all-widths` tag
 
 LICENSE
