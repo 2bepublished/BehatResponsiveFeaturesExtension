@@ -13,9 +13,7 @@ A behat extension that enables features to be enabled/disabled for different scr
 Installation
 ------------
 
-BehatResponsiveFeaturesExtension can be installed via composer.
-
-### With Git
+BehatResponsiveFeaturesExtension can be installed via composer
 
     composer require "2bepublished/behat-responsive-suite-extension"
 
@@ -66,7 +64,7 @@ Feature: A very big feature
   I need a screen with at least 500px
 ```
 
-For a bigger example configuration using browser-stack please have a look at the files [example configuration.](examples/browser-stack.behat.yml)
+For a bigger example configuration using browser-stack please have a look at the [example configuration.](examples/browser-stack.behat.yml)
 
 Features
 --------
@@ -76,7 +74,7 @@ Features
 Limitations
 -----------
 
-- Only width filtering is currently allowd
+- Only width filtering is currently allowed
 - Features that should execute on all configurations need the `@all-widths` tag
 
 LICENSE
