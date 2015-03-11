@@ -27,7 +27,7 @@ default:
   suites:
     ...
   extensions:
-    Pub\BehatResponsiveSuiteExtension\Extension: ~
+    Pub\BehatResponsiveFeaturesExtension\Extension: ~
 ```
 
 Step 2: Define a suite that uses responsive features.
