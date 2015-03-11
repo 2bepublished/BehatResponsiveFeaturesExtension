@@ -1,0 +1,4 @@
+suites:
+  behat_responsive_suite:
+    namespace: Pub\BehatResponsiveFeaturesExtension
+    psr4_prefix: Pub\BehatResponsiveFeaturesExtension
