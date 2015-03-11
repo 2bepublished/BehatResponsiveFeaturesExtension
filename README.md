@@ -64,7 +64,7 @@ Feature: A very big feature
   I need a screen with at least 500px
 ```
 
-For a bigger example configuration using browser-stack please have a look at the files [example configuration.](examples/browser-stack.behat.yml)
+For a bigger example configuration using browser-stack please have a look at the [example configuration.](examples/browser-stack.behat.yml)
 
 Features
 --------
