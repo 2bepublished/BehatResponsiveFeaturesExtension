@@ -15,7 +15,7 @@ Installation
 
 BehatResponsiveFeaturesExtension can be installed via composer
 
-    composer require "2bepublished/behat-responsive-suite-extension"
+    composer require "2bepublished/behat-responsive-features-extension"
 
 Usage
 -----
