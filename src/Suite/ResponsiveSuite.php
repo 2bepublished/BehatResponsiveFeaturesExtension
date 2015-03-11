@@ -5,6 +5,13 @@ namespace Pub\BehatResponsiveFeaturesExtension\Suite;
 use Behat\Testwork\Suite\Exception\ParameterNotFoundException;
 use Behat\Testwork\Suite\Suite;
 
+/**
+ * Class ResponsiveSuite
+ *
+ * This class adds tag-filters to the suite if a screen-width config value is found.
+ *
+ * @package Pub\BehatResponsiveFeaturesExtension\Suite
+ */
 final class ResponsiveSuite implements Suite
 {
     /**
@@ -87,6 +94,11 @@ final class ResponsiveSuite implements Suite
         return $this->settings[$key];
     }
 
+    /**
+     * Adds Tag-Filters based on a screen-width to this suite.
+     *
+     * @param $width
+     */
     private function generateScreenFilters($width)
     {
         if (!isset($this->settings['filters']['tags'])) {

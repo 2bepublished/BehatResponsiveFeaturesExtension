@@ -4,6 +4,11 @@ namespace Pub\BehatResponsiveFeaturesExtension\Suite;
 
 use Behat\Testwork\Suite\Generator\SuiteGenerator;
 
+/**
+ * Class ResponsiveSuiteGenerator
+ *
+ * @package Pub\BehatResponsiveFeaturesExtension\Suite
+ */
 class ResponsiveSuiteGenerator implements SuiteGenerator
 {
     /**

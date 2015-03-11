@@ -7,7 +7,11 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 
-
+/**
+ * Class Extension
+ *
+ * @package Pub\BehatResponsiveFeaturesExtension
+ */
 class Extension implements ExtensionInterface
 {
     /**
