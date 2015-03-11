@@ -13,9 +13,7 @@ A behat extension that enables features to be enabled/disabled for different scr
 Installation
 ------------
 
-BehatResponsiveFeaturesExtension can be installed via composer.
-
-### With Git
+BehatResponsiveFeaturesExtension can be installed via composer
 
     composer require "2bepublished/behat-responsive-suite-extension"
 
