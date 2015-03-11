@@ -22,50 +22,54 @@ BehatResponsiveFeaturesExtension can be installed via composer.
 Usage
 -----
 
-To add namespaces to all classes in a directory and save them to another directory, you just have to:
+Step 1: Activate the extension in your behat.yml
 
-    $ namespacify go ~/input-dir ~/output-dir
+```yaml
+default:
+  suites:
+    ...
+  extensions:
+    Pub\BehatResponsiveSuiteExtension\Extension: ~
+```
 
-There are three options you can use to customize the generated output. The `--prefix` option can be used to prefix the namespace.
+Step 2: Define a suite that uses responsive features.
+In the step you'll also have to define the screen-width that this suite will use.
 
-    $ namespacify go ~/input-dir ~/output-dir --prefix=MyVendorName
+```yaml
+default:
+  suites:
+    ios_7_iphone5:
+      paths:  [ %paths.base%/features/ ]
+      contexts: [ Feature ]
+      type: pub_responsive_suite    # required: this instructs Behat to use the responsive suite. 
+      screen-width: 320             # required: this sets the width for that suite
+      mink_session: ios_7_iphone5   # optional: the mink session is optional if you don't use mink. 
+```
 
-It is also possible to exclude classes based on the file name. The exlude option supports regular expressions:
+Step 3: Use the width tags inside your feature definitions:
+* @min-width:xxx - takes min-width in pixels 
+* @all-widths    - if want a feature to run on all responsive-suites use this tag.
 
-    $ namespacify go ~/input-dir ~/output-dir --exlucde="SomeFile(s)?"
+```gherkin
+@all-widths
+Feature: A very important feature
+  In order to see this very important feature
+  As a User
+  I don't need a big screen
+```
 
-If the applicatio nrequires custom transformations there is the `--transformer` option. The value should be a PHP file which contains a transformer class:
+```gherkin
+@min-width:500
+Feature: A very big feature
+  In order to see this very big feature
+  As a User
+  I need a screen with at least 500px
+```
 
-    $ namespacify go ~/input-dir ~/output-dir --transformer=./my-app-transformer.php
-
-The transformer file could look like this. It is important that the name of the class and the `transform` method are not changed.
-
-    <?php
-
-    class CodeTransformerCallback
-    {
-        static public function transform($class)
-        {
-            $code = $class['code'];
-
-            $code = str_replace(
-                array(
-                    // search
-                ),
-                array(
-                    // replace
-                ),
-                $code
-            );
-
-            $class['code'] = $code;
-            return $class;
-        }
-    }
+For a bigger example configuration using browser-stack please have a look at the files [example configuration.](examples/browser-stack.behat.yml)
 
 Features
 --------
-
 - Tag Features with a minimal required width so they are not executed on test-suites with smaller screens.
 
 

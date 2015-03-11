@@ -1,0 +1,57 @@
+default:
+
+  suites:
+
+    ###### This is a default suite that does not use the responsive features   ######
+    # Adding the @all-widths tag is not required for features in this suite         #
+    default:
+      paths:  [ %paths.base%/features/ ]
+      contexts: [ Feature ]
+      type: pub_responsive_suite
+
+    ####### This is a test-suite for an iphone5 using browser-stack ########
+    ios_7_iphone5:
+      paths:  [ %paths.base%/responsive-features/]
+      contexts: [ Feature ]
+      mink_session: ios_7_iphone5 # assigns the mink session
+      type: pub_responsive_suite  # activates responsive suite
+      screen-width: 320           # iphone5 has a width of 320px
+
+    ####### This is a test-suite for an iphone6 using browser-stack ########
+    ios_7_iphone6:
+      paths:  [ %paths.base%/responsive-features/]
+      contexts: [ Feature ]
+      mink_session: ios_7_iphone6 # assigns the mink session
+      type: pub_responsive_suite  # activates responsive suite
+      screen-width: 375           # iphone6 has a width of 375px
+
+  extensions:
+    Pub\BehatResponsiveSuiteExtension\Extension: ~
+
+    Behat\MinkExtension:
+      base_url: http://example.com
+      selenium2: ~
+
+      sessions:
+
+        # iphone5 browser-stack config #
+        ios_7_iphone5:
+          browser_stack:
+            username: your-user
+            access_key: my3xampl3
+            browser: "iPhone"
+            capabilities:
+              device: "iPhone 5S"
+              browserName: "iPhone"
+              os: "ios"
+
+        # iphone6 browser-stack config #
+        ios_7_iphone6:
+          browser_stack:
+            username: your-user
+            access_key: my3xampl3
+            browser: "iPhone"
+            capabilities:
+              device: "iPhone 6S"
+              browserName: "iPhone"
+              os: "ios"
